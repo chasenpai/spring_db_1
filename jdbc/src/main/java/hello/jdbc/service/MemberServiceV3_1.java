@@ -56,6 +56,7 @@ public class MemberServiceV3_1 {
      * - 이후 JDBC 에서 JPA 로 변경해도 서비스 코드를 그대로 유지 가능
      * - 기술 변경 시 의존관계 주입만 변경해주면 됨
      * - 트랜잭션 동기화 덕분에 커넥션을 파라미터로 넘기지 않아도 됨
+     * - 하지만 트랜잭션을 하기 위한 코드가 같은 패턴으로 반복되고 있다
      */
     private void bizLogic(String fromId, String toId, int money) throws SQLException {
         Member fromMember = memberRepository.findById(fromId);
